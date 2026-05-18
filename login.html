@@ -1,110 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <!-- ICONS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="./login.css">
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>login</title>
 
+  <!-- ICONS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+ 
+</head>
 <body>
 
-    <body>
-        <!-- ================= HEADER ================= -->
-        <header>
+  <!-- ================= HEADER ================= -->
 
-            <nav class="navbar">
+  <header>
 
-                <div class="logo">FASHIUP</div>
+    <nav class="navbar">
 
-                <ul class="nav-links" id="navLinks">
+      <div class="logo">FASHIUP</div>
 
-                    <li><a href="#">HOME</a></li>
+      <ul class="nav-links" id="navLinks">
 
-                    <li>
-                        <a href="#">
-                            SHOP <i class="fa-solid fa-angle-down"></i>
-                        </a>
-                    </li>
+        <li><a href="#">HOME</a></li>
 
-                    <li>
-                        <a href="#">
-                            CATEGORIES
-                            <span class="badge">SALE</span>
-                            <i class="fa-solid fa-angle-down"></i>
-                        </a>
-                    </li>
+        <li>
+          <a href="#">
+            SHOP <i class="fa-solid fa-angle-down"></i>
+          </a>
+        </li>
 
-                    <li>
-                        <a href="#">
-                            PRODUCTS
-                            <span class="badge hot">HOT</span>
-                            <i class="fa-solid fa-angle-down"></i>
-                        </a>
-                    </li>
+        <li>
+          <a href="#">
+            CATEGORIES
+            <span class="badge">SALE</span>
+            <i class="fa-solid fa-angle-down"></i>
+          </a>
+        </li>
 
-                    <li>
-                        <a href="#">
-                            TOP DEALS <i class="fa-solid fa-angle-down"></i>
-                        </a>
-                    </li>
+        <li>
+          <a href="#">
+            PRODUCTS
+            <span class="badge hot">HOT</span>
+            <i class="fa-solid fa-angle-down"></i>
+          </a>
+        </li>
 
-                    <li>
-                        <a href="#">
-                            ELEMENTS <i class="fa-solid fa-angle-down"></i>
-                        </a>
-                    </li>
+        <li>
+          <a href="#">
+            TOP DEALS <i class="fa-solid fa-angle-down"></i>
+          </a>
+        </li>
 
-                </ul>
+        <li>
+          <a href="#">
+            ELEMENTS <i class="fa-solid fa-angle-down"></i>
+          </a>
+        </li>
 
-                <div class="right-nav">
+      </ul>
 
-                    <div class="search-box">
-                        <input type="text" placeholder="Search product here..." />
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </div>
+      <div class="right-nav">
 
-                    <div class="icons">
+        <div class="search-box">
+          <input type="text" placeholder="Search product here..." />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
 
-                        <div>
-                            <i class="fa-regular fa-user"></i>
-                        </div>
+        <div class="icons">
 
-                        <div>
-                            <i class="fa-regular fa-heart"></i>
-                            <span class="count">0</span>
-                        </div>
+          <div>
+            <i class="fa-regular fa-user"></i>
+          </div>
 
-                        <div>
-                            <i class="fa-solid fa-bag-shopping"></i>
-                            <span class="count">0</span>
-                        </div>
+          <div>
+            <i class="fa-regular fa-heart"></i>
+            <span class="count">0</span>
+          </div>
 
-                    </div>
+          <div>
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="count">0</span>
+          </div>
 
+        </div>
+
+      </div>
+
+      <div class="menu-btn" id="menuBtn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+    </nav>
+
+  </header>
+
+
+  <!-- ================= Login container ================= -->
+   <section class="login">
+
+<div class="card-header">
+                    <h1>Login in your account</h1>
                 </div>
+    <div class="card-container">
 
-                <div class="menu-btn" id="menuBtn">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-
-            </nav>
-
-        </header>
-        <main>
-
-            <div class="card-container">
-                <div class="card-header">
-                    <div class="brand-pill">
-                        <span><img src="./Assets/Stackly logo-100kb.webp" alt=""></span>
-                    </div>
-                    <h1>Welcome back</h1>
-                    <p>Login to order your favorite meals in seconds.</p>
-                </div>
+                
 
                 <form class="auth-form">
                     <div class="input-group">
@@ -118,8 +123,7 @@
                         <select name="role" id="role" required>
                             <option value="" selected disabled>Select Role</option>
                             <option value="User">User</option>
-                            <option value="Restaurant Admin">Restaurant Admin</option>
-                            <option value="Delivery Partner">Delivery Partner</option>
+                            <option value="Seller">Seller</option>
                         </select>
                     </div>
 
@@ -132,7 +136,7 @@
                                 autocomplete="off">
 
                             <button type="button" class="toggle-password" id="togglePassword">
-                                <i class="fas fa-eye"></i>
+                                show
                             </button>
 
                         </div>
@@ -170,134 +174,142 @@
                     </div>
                 </form>
             </div>
-        </main>
-        <script>
-            document.querySelector('.auth-form').addEventListener('submit', function (e) {
-                e.preventDefault();
+   </section>
+  
+    <!-- ================= FOOTER SECTION ================= -->
 
-                const email =
-                    document.getElementById('emailAddress').value;
+  <footer>
 
-                sessionStorage.setItem('userEmail', email);
+    <div class="footer-container">
 
-                const role =
-                    document.getElementById('role').value;
+      <!-- COLUMN 1 -->
 
-                sessionStorage.setItem(
-                    'userRole',
-                    role
-                );
+      <div class="footer-col">
 
-                if (role === 'User') {
+        <h3>FASHIUP</h3>
 
-                    window.location.href =
-                        'Dashboard-Customer.html';
+        <p>
+          Welcome to our store, where we pride ourselves on
+          providing exceptional products and unparalleled customer service.
+          Our store is a haven for those who appreciate quality,
+          style, and innovation.
+        </p>
 
-                } else if (role === 'Delivery Partner') {
+        <div class="app-buttons">
 
-                    window.location.href =
-                        'Dashboard-DeliveryPartner.html';
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg">
 
-                } else if (role === 'Restaurant Admin') {
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg">
 
-                    window.location.href =
-                        'Dashboard-Hotel.html';
+        </div>
 
-                } else {
+      </div>
 
-                    alert('Please select a role.');
-                }
-            });
+      <!-- COLUMN 2 -->
 
+      <div class="footer-col">
 
-            /* PASSWORD SHOW/HIDE */
+        <h2>Our Company</h2>
 
-            const togglePassword =
-                document.getElementById('togglePassword');
+        <div class="footer-links">
+          <a href="#">Delivery</a>
+          <a href="#">Legal Notice</a>
+          <a href="#">Terms and Conditions</a>
+          <a href="#">Secure Payment</a>
+          <a href="#">Contact Us</a>
+          <a href="#">About Us</a>
+        </div>
 
-            const password =
-                document.getElementById('password');
+      </div>
 
-            togglePassword.addEventListener('click', () => {
+      <!-- COLUMN 3 -->
 
-                if (password.type === 'password') {
+      <div class="footer-col">
 
-                    password.type = 'text';
+        <h2>Products</h2>
 
-                    togglePassword.innerHTML =
-                        '<i class="fas fa-eye-slash"></i>';
+        <div class="footer-links">
+          <a href="#">Prices Drop</a>
+          <a href="#">New Products</a>
+          <a href="#">Best Sellers</a>
+          <a href="#">Sitemap</a>
+          <a href="#">Stores</a>
+          <a href="#">Accessories</a>
+        </div>
 
-                } else {
+      </div>
 
-                    password.type = 'password';
+      <!-- COLUMN 4 -->
 
-                    togglePassword.innerHTML =
-                        '<i class="fas fa-eye"></i>';
-                }
+      <div class="footer-col">
 
-            });
+        <h2>Store Information</h2>
 
+        <p>
+          Fashiup - Fashion Store <br>
+          99 New Theme St. XY, USA 12345, <br>
+          Beside the Sun point land. <br>
+          United States
+        </p>
 
-            /* EMAIL VALIDATION */
+        <p>Call us: +00 123-456-789</p>
 
-            const emailInput =
-                document.getElementById('emailAddress');
+        <p>Email us: admin@example.com</p>
 
-            emailInput.addEventListener('input', () => {
+      </div>
 
-                /* REMOVE OLD ERROR */
+    </div>
 
-                const existingError =
-                    emailInput.parentElement
-                        .querySelector('.error-message');
+    <!-- ================= FOOTER BOTTOM ================= -->
 
-                if (existingError) {
+    <div class="footer-bottom">
 
-                    existingError.remove();
-                }
+      <!-- SOCIAL -->
 
-                const email =
-                    emailInput.value.trim();
+      <div class="social-icons">
 
-                const emailPattern =
-                    /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|in)$/;
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
 
-                /* SHOW ERROR ONLY WHEN USER TYPES */
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
 
-                if (
-                    email.length > 0 &&
-                    !emailPattern.test(email)
-                ) {
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
 
-                    showError(
-                        emailInput,
-                        'Email must end with .com or .in'
-                    );
-                }
+        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
 
-            });
+        <a href="#"><i class="fa-brands fa-google"></i></a>
 
+      </div>
 
-            /* SHOW ERROR FUNCTION */
+      <!-- COPYRIGHT -->
 
-            function showError(input, message) {
+      <div class="copyright">
+        Copyright © Fashiup. All Rights Reserved
+      </div>
 
-                const error =
-                    document.createElement('small');
+      <!-- PAYMENT -->
 
-                error.className = 'error-message';
+      <div class="payment">
 
-                error.style.color = 'red';
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg">
 
-                error.style.marginTop = '5px';
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg">
 
-                error.innerText = message;
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png">
 
-                input.parentElement.appendChild(error);
-            }
-        </script>
+      </div>
 
+      <!-- TOP BUTTON -->
 
-    </body>
+      <div class="top-btn" id="topBtn">
+        <i class="fa-solid fa-angle-up"></i>
+      </div>
 
+    </div>
+
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="./login.js"></script>
+
+</body>
 </html>
