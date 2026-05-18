@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="login.css">
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --bg:#120603;
+    --bg2:#1c0b05;
+    --card:#1b0d08;
+    --card2:#25120a;
+    --border:rgba(255,140,60,0.14);
+
+    --orange:#ff6b2c;
+    --orange2:#ff8a4c;
+
+    --text:#fff7f2;
+    --muted:#c7a898;
+
+    --shadow:0 20px 60px rgba(0,0,0,0.45);
+
+    --gradient:
+    linear-gradient(
+        135deg,
+        #ff6b2c 0%,
+        #ff8a4c 100%
+    );
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(255,107,44,0.14),
+    transparent 35%),
+
+    radial-gradient(circle at bottom right,
+    rgba(255,138,76,0.08),
+    transparent 30%),
+
+    var(--bg);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+}
+
+/* ================= APP ================= */
+
+.app-shell{
+    display:flex;
+    min-height:100vh;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar{
+    width:280px;
+
+    background:rgba(27,13,8,0.95);
+
+    backdrop-filter:blur(20px);
+
+    border-right:1px solid var(--border);
+
+    position:fixed;
+    left:0;
+    top:0;
+
+    height:100vh;
+
+    padding:24px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+
+    z-index:1000;
+
+    transition:0.3s ease;
+}
+
+.sidebar-brand{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    gap:10px;
+
+    margin-bottom:50px;
+}
+
+.logo img{
+    width:190px;
+    height:auto;
+}
+
+.sidebar-nav{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+
+    width:100%;
+    align-items:center;
+}
+
+.sidebar-nav a{
+    text-decoration:none;
+
+    color:#f5d7c6;
+
+    padding:15px 18px;
+
+    border-radius:14px;
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    transition:0.3s;
+
+    width:100%;
+    max-width:210px;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active{
+    background:var(--gradient);
+
+    color:white;
+
+    box-shadow:
+    0 10px 25px rgba(255,107,44,0.25);
+}
+
+/* ================= MAIN ================= */
+
+.main-content{
+    flex:1;
+
+    margin-left:280px;
+
+    padding:32px;
+
+    width:100%;
+}
+
+/* ================= TOPBAR ================= */
+
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    margin-bottom:32px;
+    flex-wrap:nowrap;
+}
+
+
+.topbar-left{
+    flex:1;
+    min-width:0;
+}
+
+
+.welcome-tag{
+    display:inline-block;
+
+    background:var(--gradient);
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    margin-bottom:14px;
+
+    box-shadow:
+    0 10px 20px rgba(255,107,44,0.25);
+}
+
+.topbar-left h1{
+    font-size:42px;
+    margin-bottom:18px;
+    line-height:1.2;
+}
+
+/* ================= USER INFO ================= */
+
+.top-user-info{
+    display:flex;
+    align-items:center;
+
+    gap:14px;
+
+    flex-wrap:nowrap;
+
+    overflow-x:auto;
+
+    scrollbar-width:none;
+}
+
+.top-user-info::-webkit-scrollbar{
+    display:none;
+}
+
+
+.email-badge{
+    background:rgba(255,255,255,0.05);
+    border:1px solid var(--border);
+
+    padding:12px 16px;
+    border-radius:14px;
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    white-space:nowrap;
+
+    font-size:14px;
+}
+
+
+/* ================= LOGOUT ================= */
+
+.topbar-right{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:12px;
+
+    flex-wrap:nowrap;
+    flex-shrink:0;
+}
+
+.topbar-logout{
+    border:none;
+    background:var(--gradient);
+
+    color:white;
+
+    padding:12px 18px;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    white-space:nowrap;
+
+    transition:0.3s;
+}
+
+.topbar-logout:hover{
+    transform:translateY(-2px);
+}
+
+/* ================= GRID ================= */
+
+.dashboard-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:24px;
+}
+
+/* ================= CARD ================= */
+
+.dashboard-card{
+    background:
+    linear-gradient(
+        180deg,
+        rgba(255,255,255,0.03),
+        rgba(255,255,255,0.01)
+    );
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:24px;
+
+    box-shadow:var(--shadow);
+
+    transition:0.3s;
+}
+
+.dashboard-card:hover{
+    transform:translateY(-4px);
+
+    border-color:
+    rgba(255,107,44,0.35);
+}
+
+.dashboard-card h3{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    margin-bottom:22px;
+
+    font-size:22px;
+}
+
+.dashboard-card h3 i{
+    color:var(--orange);
+}
+
+/* ================= PAGE SWITCH ================= */
+
+.page-content{
+    display:none;
+}
+
+.page-content.active-page{
+    display:block;
+}
+
+/* ================= CONTENT ================= */
+
+.notification-item,
+.review-item,
+.favorite-item{
+    background:
+    rgba(255,255,255,0.04);
+
+    border:1px solid rgba(255,255,255,0.04);
+
+    padding:14px;
+
+    border-radius:14px;
+
+    margin-bottom:12px;
+}
+
+.favorite-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.wallet-balance{
+    text-align:center;
+    padding:24px 0;
+}
+
+.wallet-balance span{
+    display:block;
+
+    font-size:48px;
+
+    font-weight:bold;
+
+    margin-bottom:8px;
+}
+
+.wallet-balance small{
+    color:var(--muted);
+}
+
+.stars{
+    color:#ffcc70;
+    margin-bottom:10px;
+}
+
+/* ================= BUTTONS ================= */
+
+.btn-support{
+    width:100%;
+
+    border:none;
+
+    background:var(--gradient);
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    transition:0.3s;
+}
+
+.btn-support:hover{
+    transform:translateY(-2px);
+}
+
+.support-links{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.support-links a{
+    text-decoration:none;
+
+    color:white;
+
+    background:
+    rgba(255,255,255,0.04);
+
+    padding:14px;
+
+    border-radius:14px;
+
+    border:1px solid rgba(255,255,255,0.04);
+
+    transition:0.3s;
+}
+
+.support-links a:hover{
+    border-color:rgba(255,107,44,0.35);
+}
+
+/* ================= MOBILE HEADER ================= */
+
+.mobile-bar{
+    display:none;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    background:
+    rgba(27,13,8,0.95);
+
+    backdrop-filter:blur(20px);
+
+    border-bottom:1px solid var(--border);
+
+    padding:14px 18px;
+
+    z-index:1100;
+
+    justify-content:space-between;
+    align-items:center;
+}
+
+.mobile-bar-brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.mobile-bar-brand img{
+    width:100px;
+    height:44px;
+
+    border-radius:12px;
+}
+
+.mobile-bar-right{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.m-logout{
+    border:none;
+
+    background:var(--gradient);
+
+    color:white;
+
+    padding:10px 14px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+/* ================= HAMBURGER ================= */
+
+.hamburger{
+    width:46px;
+    height:46px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:var(--gradient);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    gap:5px;
+
+    cursor:pointer;
+}
+
+.hamburger span{
+    width:22px;
+    height:2px;
+
+    background:white;
+}
+
+/* ================= OVERLAY ================= */
+
+.overlay{
+    position:fixed;
+    inset:0;
+
+    background:
+    rgba(0,0,0,0.55);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:0.3s;
+
+    z-index:999;
+}
+
+.overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+
+/* ================= TABLET ================= */
+
+@media(max-width:991px){
+
+    .mobile-bar{
+        display:flex;
+    }
+
+    .sidebar{
+        transform:translateX(-100%);
+    }
+
+    .sidebar.open{
+        transform:translateX(0);
+    }
+
+    .main-content{
+        margin-left:0;
+
+        padding:
+        110px 18px 20px;
+    }
+
+   .topbar-logout{
+    display: none;
+
+   }
+   
+
+    .logo img{
+        display:none;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:576px){
+
+    .topbar-left h1{
+        font-size:30px;
+        line-height:1.2;
+    }
+
+    .dashboard-grid{
+        grid-template-columns:1fr;
+    }
+      .topbar{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+    .dashboard-card{
+        padding:18px;
+    }
+
+    .wallet-balance span{
+        font-size:36px;
+    }
+
+    .mobile-bar{
+        padding:12px 14px;
+    }
+
+    .m-logout{
+        padding:9px 12px;
+        font-size:13px;
+    }
+
+    .hamburger{
+        width:42px;
+        height:42px;
+    }
+
+    .topbar-logout{
+        padding:12px 14px;
+        font-size:13px;
+    }
+}
+@media (max-width:350px) {
+    .topbar-right{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+@media(max-width:991px){
+
+    .sidebar{
+        transform:translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.open{
+        transform:translateX(0);
+    }
+
+}
+</style>
+</head>
+<body>
+
+<!-- MOBILE TOPBAR -->
+<header class="mobile-bar">
+  <div class="mobile-bar-brand">
+    <a href="./index.html">
+        <img src="./Assets/Stackly logo-100kb.webp" alt="">
+    </a>
+  </div>
+
+  <div class="mobile-bar-right">
+
+    <button class="m-logout" onclick="logout()">
+      <i class="fas fa-sign-out-alt"></i> Logout
+    </button>
+
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay"></div>
+
+<div class="app-shell">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-brand">
+      <div class="logo">
+        <a href="./index.html">
+            <img src="./Assets/Stackly logo-100kb.webp" alt="">
+        </a>
+      </div>
+      <div class="sidebar-brand-text">
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+
+    <a href="./404.html" class="nav-link active" data-page="dashboard">
+        <i class="fas fa-home"></i>
+        Dashboard
+    </a>
+
+    <a href="./404.html" class="nav-link" data-page="analytics">
+        <i class="fas fa-chart-line"></i>
+        Analytics
+    </a>
+
+    <a href="./404.html" class="nav-link" data-page="notifications">
+        <i class="fas fa-bell"></i>
+        Notifications
+    </a>
+
+    <a href="./404.html" class="nav-link" data-page="settings">
+        <i class="fas fa-cog"></i>
+        Settings
+    </a>
+
+    <a href="./404.html" class="nav-link" data-page="support">
+        <i class="fas fa-headset"></i>
+        Support
+    </a>
+
+</nav>
+
+   
+
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+
+    <!-- DESKTOP TOPBAR -->
+    <div class="topbar">
+
+      <div class="topbar-left">
+        <div class="welcome-tag">
+          Welcome Back
+        </div>
+
+        <h1 id="dashboardTitle">
+          Customer Dashboard
+        </h1>
+        
+
+       
+      </div>
+    
+
+      <div class="topbar-right">
+        <div class="email-badge">
+    <i class="fas fa-user-tag"></i>
+    <span id="topbarRoleBadge">—</span>
+</div>
+        <div class="email-badge">
+          <i class="fas fa-envelope"></i>
+          <span id="topbarEmailBadge">—</span>
+        </div>
+
+        <button class="topbar-logout" onclick="logout()">
+          <i class="fas fa-sign-out-alt"></i>
+          Logout
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content-area">
+
+
+<!-- DASHBOARD PAGE -->
+
+<div class="page-content active-page" id="dashboard">
+
+    <div class="dashboard-grid">
+
+        <div class="dashboard-card">
+            <h3>
+                <i class="fas fa-shopping-bag"></i>
+                Total Orders
+            </h3>
+
+            <div class="wallet-balance">
+                <span>4</span>
+                <small>Orders Completed</small>
+            </div>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>
+                <i class="fas fa-wallet"></i>
+                Total Spending
+            </h3>
+
+            <div class="wallet-balance">
+                <span>₹1,450</span>
+                <small>Total Food Expenses</small>
+            </div>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>
+                <i class="fas fa-gift"></i>
+                Reward Points
+            </h3>
+
+            <div class="wallet-balance">
+                <span>2,450</span>
+                <small>Loyalty Points Earned</small>
+            </div>
+        </div>
+
+        <div class="dashboard-card">
+
+            <h3>
+                <i class="fas fa-clock"></i>
+                Recent Orders
+            </h3>
+
+            <div class="notification-item">
+                <p>Chicken Burger Combo</p>
+                <small>Delivered • 20 mins ago</small>
+            </div>
+
+            <div class="notification-item">
+                <p>Family Pizza Pack</p>
+                <small>Delivered • Yesterday</small>
+            </div>
+
+            <div class="notification-item">
+                <p>Grill Chicken Meal</p>
+                <small>Preparing • 10 mins ago</small>
+            </div>
+
+        </div>
+
+        <div class="dashboard-card">
+
+            <h3>
+                <i class="fas fa-heart"></i>
+                Favorite Restaurants
+            </h3>
+
+            <div class="notification-item">
+                <p>Burger House</p>
+                <small>12 Orders</small>
+            </div>
+
+            <div class="notification-item">
+                <p>Pizza Corner</p>
+                <small>8 Orders</small>
+            </div>
+
+            <div class="notification-item">
+                <p>Arabian Grill</p>
+                <small>5 Orders</small>
+            </div>
+
+        </div>
+
+        <div class="dashboard-card">
+
+            <h3>
+                <i class="fas fa-star"></i>
+                Recent Reviews
+            </h3>
+
+            <div class="review-item">
+                <div class="stars">★★★★★</div>
+                <p>Excellent food and fast delivery.</p>
+                <small>Burger House</small>
+            </div>
+
+            <div class="review-item">
+                <div class="stars">★★★★☆</div>
+                <p>Fresh food with good packaging.</p>
+                <small>Pizza Corner</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ANALYTICS PAGE -->
+
+<div class="page-content" id="analytics">
+
+    <div class="dashboard-grid">
+         <div class="dashboard-card">
+            <h3>
+                <i class="fas fa-wallet"></i>
+                Spending Overview
+            </h3>
+
+            <div class="wallet-balance">
+                <span>₹80,450</span>
+                <small>Total Food Expenses</small>
+            </div>
+        </div>
+        <div class="dashboard-card">
+
+        <h3>
+            <i class="fas fa-percent"></i>
+            Savings Overview
+        </h3>
+
+        <div class="notification-item">
+            <p>Total Cashback Earned</p>
+            <small>₹2,450 Saved</small>
+        </div>
+
+        <div class="notification-item">
+            <p>Coupons Used</p>
+            <small>18 Coupons Applied</small>
+        </div>
+
+    </div>
+
+    <div class="dashboard-card">
+
+        <h3>
+            <i class="fas fa-chart-bar"></i>
+            Weekly Activity
+        </h3>
+
+        <div class="notification-item">
+            <p>Orders This Week</p>
+            <small>6 Orders Completed</small>
+        </div>
+
+        <div class="notification-item">
+            <p>Favorite Order Day</p>
+            <small>Saturday</small>
+        </div>
+
+    </div>
+        
+
+        <div class="dashboard-card">
+
+            <h3>
+                <i class="fas fa-chart-pie"></i>
+                Food Preferences
+            </h3>
+
+            <div class="notification-item">
+                <p>Fast Food</p>
+                <small>45% Orders</small>
+            </div>
+
+            <div class="notification-item">
+                <p>Arabian Cuisine</p>
+                <small>30% Orders</small>
+            </div>
+
+            <div class="notification-item">
+                <p>Desserts</p>
+                <small>25% Orders</small>
+            </div>
+
+        </div>
+
+        <div class="dashboard-card">
+
+            <h3>
+                <i class="fas fa-motorcycle"></i>
+                Delivery Insights
+            </h3>
+
+            <div class="notification-item">
+                <p>Average Delivery Time</p>
+                <small>28 Minutes</small>
+            </div>
+
+            <div class="notification-item">
+                <p>Fastest Delivery</p>
+                <small>12 Minutes</small>
+            </div>
+
+        </div>
+
+       
+
+        <div class="dashboard-card">
+
+            <h3>
+                <i class="fas fa-chart-line"></i>
+                Order Analytics
+            </h3>
+
+            <div class="notification-item">
+                <p>Favorite Food</p>
+                <small>Burgers & Fast Food</small>
+            </div>
+
+            <div class="notification-item">
+                <p>Orders This Month</p>
+                <small>14 Orders Completed</small>
+            </div>
+
+            <div class="notification-item">
+                <p>Most Ordered Time</p>
+                <small>8 PM - 10 PM</small>
+            </div>
+
+        </div>
+
+        <div class="dashboard-card">
+
+            <h3>
+                <i class="fas fa-heart"></i>
+                Favorite Restaurants
+            </h3>
+
+            <div class="notification-item">
+                <p>Burger House</p>
+                <small>12 Orders</small>
+            </div>
+
+            <div class="notification-item">
+                <p>Pizza Corner</p>
+                <small>8 Orders</small>
+            </div>
+
+        </div>
+        
+
+    </div>
+
+</div>
+
+<!-- NOTIFICATIONS PAGE -->
+
+<div class="page-content" id="notifications">
+
+    <div class="dashboard-grid">
+        <div class="dashboard-card">
+
+        <h3>
+            <i class="fas fa-tags"></i>
+            Promotional Updates
+        </h3>
+
+        <div class="notification-item">
+            <p>Flat ₹150 OFF on burgers</p>
+            <small>Valid till tonight</small>
+        </div>
+
+        <div class="notification-item">
+            <p>Free delivery available</p>
+            <small>On orders above ₹299</small>
+        </div>
+
+    </div>
+
+        <div class="dashboard-card">
+
+            <h3>
+                <i class="fas fa-bell"></i>
+                Notifications
+            </h3>
+
+            <div class="notification-item">
+                <p>Your order has been delivered</p>
+                <small>10 mins ago</small>
+            </div>
+
+            <div class="notification-item">
+                <p>New offer: 50% OFF on pizzas</p>
+                <small>Today</small>
+            </div>
+
+            <div class="notification-item">
+                <p>Cashback added to wallet</p>
+                <small>Yesterday</small>
+            </div>
+
+        </div>
+
+        <div class="dashboard-card">
+
+            <h3>
+                <i class="fas fa-comments"></i>
+                Messages
+            </h3>
+
+            <div class="notification-item">
+                <p>Delivery Partner</p>
+                <small>Your order is arriving soon.</small>
+            </div>
+
+            <div class="notification-item">
+                <p>Customer Support</p>
+                <small>Refund request approved.</small>
+            </div>
+
+        </div>
+       
+
+
+    </div>
+
+</div>
+
+<!-- SETTINGS PAGE -->
+
+<div class="page-content" id="settings">
+
+    <div class="dashboard-grid">
+
+        <div class="dashboard-card">
+
+            <h3>
+                <i class="fas fa-user-cog"></i>
+                Account Settings
+            </h3>
+
+            <div class="support-links">
+                <a href="./404.html">Edit Profile</a>
+                <a href="./404.html">Manage Addresses</a>
+                <a href="./404.html">Saved Restaurants</a>
+                <a href="./404.html">Change Password</a>
+            </div>
+
+        </div>
+
+        <div class="dashboard-card">
+
+            <h3>
+                <i class="fas fa-credit-card"></i>
+                Payment Methods
+            </h3>
+
+            <div class="support-links">
+                <a href="./404.html">UPI Payments</a>
+                <a href="./404.html">Saved Cards</a>
+                <a href="./404.html">Wallet Balance</a>
+                <a href="./404.html">Transaction History</a>
+            </div>
+
+        </div>
+         <div class="dashboard-card">
+
+        <h3>
+            <i class="fas fa-bell"></i>
+            Notification Preferences
+        </h3>
+
+        <div class="support-links">
+            <a href="./404.html">Push Notifications</a>
+            <a href="./404.html">SMS Alerts</a>
+            <a href="./404.html">Email Notifications</a>
+        </div>
+
+        </div>
+        <div class="dashboard-card">
+
+                    <h3>
+                        <i class="fas fa-shield-alt"></i>
+                        Privacy Settings
+                    </h3>
+
+                    <div class="support-links">
+                        <a href="./404.html">Two-Factor Authentication</a>
+                        <a href="./404.html">Manage Devices</a>
+                        <a href="./404.html">Login History</a>
+                    </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+<!-- SUPPORT PAGE -->
+
+<div class="page-content" id="support">
+
+    <div class="dashboard-grid">
+
+        <div class="dashboard-card">
+
+            <h3>
+                <i class="fas fa-headset"></i>
+                Customer Support
+            </h3>
+
+            <div class="notification-item">
+                <p>Email Support</p>
+                <small>support@stackly.com</small>
+            </div>
+
+            <div class="notification-item">
+                <p>24/7 Helpline</p>
+                <small>+91 9876543210</small>
+            </div>
+            <a href="./404.html">
+
+                <button class="btn-support">
+                    Contact Support
+                </button>
+            </a>
+
+        </div>
+
+        <div class="dashboard-card">
+
+            <h3>
+                <i class="fas fa-question-circle"></i>
+                Help Center
+            </h3>
+
+            <div class="notification-item">
+                <p>How to cancel orders?</p>
+            </div>
+
+            <div class="notification-item">
+                <p>How cashback works?</p>
+            </div>
+
+            <div class="notification-item">
+                <p>How to request refunds?</p>
+            </div>
+
+        </div>
+        <div class="dashboard-card">
+
+        <h3>
+            <i class="fas fa-file-alt"></i>
+            Policies
+        </h3>
+
+        <div class="notification-item">
+            <p>Refund Policy</p>
+        </div>
+
+        <div class="notification-item">
+            <p>Privacy Policy</p>
+        </div>
+
+        <div class="notification-item">
+            <p>Terms & Conditions</p>
+        </div>
+
+    </div>
+    <div class="dashboard-card">
+
+            <h3>
+                <i class="fas fa-headset"></i>
+                Hotel Support
+            </h3>
+
+            <div class="notification-item">
+                <p>Email Support</p>
+                <small>hotel-support@stackly.com</small>
+            </div>
+
+            <div class="notification-item">
+                <p>Manager Contact</p>
+                <small>+91 9876543210</small>
+            </div>
+            <a href="./404.html">
+                <button class="btn-support">
+                    Contact Support
+                </button>
+            </a>
+
+        </div>
+        <div class="dashboard-card">
+
+                <h3>
+                    <i class="fas fa-question-circle"></i>
+                    FAQ
+                </h3>
+
+                <div class="notification-item">
+                    <p>How to track orders?</p>
+                </div>
+
+                <div class="notification-item">
+                    <p>How to change password?</p>
+                </div>
+
+                <div class="notification-item">
+                    <p>How to contact delivery partner?</p>
+                </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+    </div>
+
+</div>
+
+  </div>
+
+</div>
+
+<script>
+/* ROLE */
+
+const role =
+sessionStorage.getItem('userRole')
+|| 'Guest';
+
+document.getElementById(
+    'topbarRoleBadge'
+).textContent = role;
+
+const mobileRole =
+document.getElementById(
+    'mobileRoleBadge'
+);
+
+if(mobileRole){
+
+    mobileRole.textContent = role;
+}
+const email = sessionStorage.getItem('userEmail') || 'guest@stackly.app';
+
+document.getElementById('topbarEmailBadge').textContent = email;
+
+const badge = document.getElementById('topbarEmailBadges');
+
+if(badge){
+    badge.textContent = email;
+}
+
+const hamburger = document.getElementById('hamburger');
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('overlay');
+
+function openSidebar() {
+  sidebar.classList.add('open');
+  overlay.classList.add('active');
+  hamburger.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSidebar() {
+  sidebar.classList.remove('open');
+  overlay.classList.remove('active');
+  hamburger.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+hamburger.addEventListener('click', () => {
+
+  if(sidebar.classList.contains('open')) {
+    closeSidebar();
+  } else {
+    openSidebar();
+  }
+
+});
+
+overlay.addEventListener('click', closeSidebar);
+
+function logout() {
+  sessionStorage.removeItem('userEmail');
+  window.location.href = 'index.html';
+}
+
+
+
+const navLinks = document.querySelectorAll('.nav-link');
+const pages = document.querySelectorAll('.page-content');
+
+navLinks.forEach(link => {
+
+    link.addEventListener('click', function(e){
+
+        e.preventDefault();
+
+        navLinks.forEach(item => {
+            item.classList.remove('active');
+        });
+
+        this.classList.add('active');
+
+        const target = this.dataset.page;
+
+        pages.forEach(page => {
+            page.classList.remove('active-page');
+        });
+
+        document.getElementById(target)
+        .classList.add('active-page');
+
+    });
+
+});
+
+
+</script>
+
+</body>
+</html>
