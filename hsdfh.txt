@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./login.css">
+</head>
+
+    <body>
+        <!-- ================= HEADER ================= -->
+        <header>
+
+            <nav class="navbar">
+
+                <div class="logo">FASHIUP</div>
+
+                <ul class="nav-links" id="navLinks">
+
+                    <li><a href="#">HOME</a></li>
+
+                    <li>
+                        <a href="#">
+                            SHOP <i class="fa-solid fa-angle-down"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            CATEGORIES
+                            <span class="badge">SALE</span>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            PRODUCTS
+                            <span class="badge hot">HOT</span>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            TOP DEALS <i class="fa-solid fa-angle-down"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            ELEMENTS <i class="fa-solid fa-angle-down"></i>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="right-nav">
+
+                    <div class="search-box">
+                        <input type="text" placeholder="Search product here..." />
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+
+                    <div class="icons">
+
+                        <div>
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+
+                        <div>
+                            <i class="fa-regular fa-heart"></i>
+                            <span class="count">0</span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-bag-shopping"></i>
+                            <span class="count">0</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="menu-btn" id="menuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
+            </nav>
+
+        </header>
+        <main>
+
+            <div class="card-container">
+                <div class="card-header">
+                    <div class="brand-pill">
+                        <span><img src="./Assets/Stackly logo-100kb.webp" alt=""></span>
+                    </div>
+                    <h1>Welcome back</h1>
+                    <p>Login to order your favorite meals in seconds.</p>
+                </div>
+
+                <form class="auth-form">
+                    <div class="input-group">
+                        <label>Email Address</label>
+
+                        <input type="email" id="emailAddress" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Role</label>
+                        <select name="role" id="role" required>
+                            <option value="" selected disabled>Select Role</option>
+                            <option value="User">User</option>
+                            <option value="Restaurant Admin">Restaurant Admin</option>
+                            <option value="Delivery Partner">Delivery Partner</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Password</label>
+
+                        <div class="password-field">
+
+                            <input type="password" id="password" placeholder="Enter your password" required
+                                autocomplete="off">
+
+                            <button type="button" class="toggle-password" id="togglePassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+
+                        </div>
+                    </div>
+                    <div class="action-row remember-row">
+
+                        <label class="remember-me">
+                            <input type="checkbox" id="rememberMe">
+                            <span>Remember Me</span>
+                        </label>
+
+                        <a href="./404.html">Forgot Password?</a>
+
+                    </div>
+
+
+                    <button type="submit" class="main-btn">LOG IN</button>
+
+                    <div class="social-divider">or continue with</div>
+
+                    <div class="social-row">
+                        <a href="./404.html">
+                            <button type="button" class="social-btn google"><i class="fab fa-google"></i></button>
+                        </a>
+                        <a href="./404.html">
+                            <button type="button" class="social-btn facebook"><i class="fab fa-facebook-f"></i></button>
+                        </a>
+                        <a href="./404.html">
+                            <button type="button" class="social-btn apple"><i class="fab fa-apple"></i></button>
+                        </a>
+                    </div>
+
+                    <div class="footer-note">
+                        Don’t have an account? <a href="sign.html">Sign Up</a>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <script>
+            document.querySelector('.auth-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const email =
+                    document.getElementById('emailAddress').value;
+
+                sessionStorage.setItem('userEmail', email);
+
+                const role =
+                    document.getElementById('role').value;
+
+                sessionStorage.setItem(
+                    'userRole',
+                    role
+                );
+
+                if (role === 'User') {
+
+                    window.location.href =
+                        'Dashboard-Customer.html';
+
+                } else if (role === 'Delivery Partner') {
+
+                    window.location.href =
+                        'Dashboard-DeliveryPartner.html';
+
+                } else if (role === 'Restaurant Admin') {
+
+                    window.location.href =
+                        'Dashboard-Hotel.html';
+
+                } else {
+
+                    alert('Please select a role.');
+                }
+            });
+
+
+            /* PASSWORD SHOW/HIDE */
+
+            const togglePassword =
+                document.getElementById('togglePassword');
+
+            const password =
+                document.getElementById('password');
+
+            togglePassword.addEventListener('click', () => {
+
+                if (password.type === 'password') {
+
+                    password.type = 'text';
+
+                    togglePassword.innerHTML =
+                        '<i class="fas fa-eye-slash"></i>';
+
+                } else {
+
+                    password.type = 'password';
+
+                    togglePassword.innerHTML =
+                        '<i class="fas fa-eye"></i>';
+                }
+
+            });
+
+
+            /* EMAIL VALIDATION */
+
+            const emailInput =
+                document.getElementById('emailAddress');
+
+            emailInput.addEventListener('input', () => {
+
+                /* REMOVE OLD ERROR */
+
+                const existingError =
+                    emailInput.parentElement
+                        .querySelector('.error-message');
+
+                if (existingError) {
+
+                    existingError.remove();
+                }
+
+                const email =
+                    emailInput.value.trim();
+
+                const emailPattern =
+                    /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|in)$/;
+
+                /* SHOW ERROR ONLY WHEN USER TYPES */
+
+                if (
+                    email.length > 0 &&
+                    !emailPattern.test(email)
+                ) {
+
+                    showError(
+                        emailInput,
+                        'Email must end with .com or .in'
+                    );
+                }
+
+            });
+
+
+            /* SHOW ERROR FUNCTION */
+
+            function showError(input, message) {
+
+                const error =
+                    document.createElement('small');
+
+                error.className = 'error-message';
+
+                error.style.color = 'red';
+
+                error.style.marginTop = '5px';
+
+                error.innerText = message;
+
+                input.parentElement.appendChild(error);
+            }
+        </script>
+
+
+    </body>
+
+</html>
