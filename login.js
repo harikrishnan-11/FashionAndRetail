@@ -1,28 +1,60 @@
 
+document.querySelector('.auth-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const email =
+    document.getElementById('emailAddress').value;
+
+    sessionStorage.setItem('userEmail', email);
+
+    const role =
+document.getElementById('role').value;
+
+sessionStorage.setItem(
+    'userRole',
+    role
+);
+
+    if (role === 'User') {
+
+        window.location.href =
+        'User.html';
+
+    } else if (role === 'Admin') {
+
+        window.location.href =
+        'Admin.html';
+
+    } else {
+
+        alert('Please select a role.');
+    }
+});
+
 
 /* PASSWORD SHOW/HIDE */
 
 const togglePassword =
-    document.getElementById('togglePassword');
+document.getElementById('togglePassword');
 
 const password =
-    document.getElementById('password');
+document.getElementById('password');
 
 togglePassword.addEventListener('click', () => {
 
-    if (password.type === 'password') {
+    if(password.type === 'password'){
 
         password.type = 'text';
 
         togglePassword.innerHTML =
-            '<i class="fas fa-eye-slash"></i>';
+        '<i class="fas fa-eye-slash"></i>';
 
     } else {
 
         password.type = 'password';
 
         togglePassword.innerHTML =
-            '<i class="fas fa-eye"></i>';
+        '<i class="fas fa-eye"></i>';
     }
 
 });
@@ -31,33 +63,33 @@ togglePassword.addEventListener('click', () => {
 /* EMAIL VALIDATION */
 
 const emailInput =
-    document.getElementById('emailAddress');
+document.getElementById('emailAddress');
 
 emailInput.addEventListener('input', () => {
 
     /* REMOVE OLD ERROR */
 
     const existingError =
-        emailInput.parentElement
-            .querySelector('.error-message');
+    emailInput.parentElement
+    .querySelector('.error-message');
 
-    if (existingError) {
+    if(existingError){
 
         existingError.remove();
     }
 
     const email =
-        emailInput.value.trim();
+    emailInput.value.trim();
 
     const emailPattern =
-        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|in)$/;
+    /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|in)$/;
 
     /* SHOW ERROR ONLY WHEN USER TYPES */
 
-    if (
+    if(
         email.length > 0 &&
         !emailPattern.test(email)
-    ) {
+    ){
 
         showError(
             emailInput,
@@ -70,10 +102,10 @@ emailInput.addEventListener('input', () => {
 
 /* SHOW ERROR FUNCTION */
 
-function showError(input, message) {
+function showError(input, message){
 
     const error =
-        document.createElement('small');
+    document.createElement('small');
 
     error.className = 'error-message';
 
