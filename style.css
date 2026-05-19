@@ -866,56 +866,7 @@ footer {
         font-size: 15px;
     }
 
-<<<<<<< HEAD
-  .copyright{
-    font-size:14px;
-  }
-}
-
-
-/*newsletter  */
-
-.newsletter{
-  margin-top:60px;
-  background:linear-gradient(135deg,#111827,#1f2937);
-  color:white;
-  border-radius:30px;
-  padding:50px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:30px;
-  flex-wrap:wrap; 
-}
-
-.newsletter h2{
-  font-size:38px;
-  margin-bottom:10px;
-}
-
-.newsletter form{
-  display:flex;
-  gap:15px;
-  flex-wrap:wrap;
-}
-
-.newsletter input{
-  width:320px;
-  padding:16px;
-  border:none;
-  border-radius:14px;
-}
-
-.newsletter button{
-  padding:16px 30px;
-  border-radius:14px;
-  background:white;
-  color:#111827;
-  font-weight:700;
-}
-=======
     .copyright {
         font-size: 14px;
     }
 }
->>>>>>> d42223a6ced7735278a1d8b811ff24a8ec412849
