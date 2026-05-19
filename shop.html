@@ -1,240 +1,581 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxury Fashion - Premium Collection</title>
-    <link rel="stylesheet" href="./shop.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fashion Website</title>
+
+  <!-- ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./shop.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
 </head>
+
 <body>
-
-<!-- HEADER WITH LUXURY BRAND STYLING -->
-<header class="luxury-header">
-  <div class="header-top">
-    <div class="brand-name">LUXE FASHION</div>
-    <div class="header-nav">
-      <a href="index.html">Home</a>
-      <a href="shop.html" class="active">Shop</a>
-      <a href="#">About</a>
+  <div class="top-bar">
+    <div class="promo-text">
+      FREE SHIPPING WORLD WIDE FOR ALL ORDERS OVER $199
+      <a href="#" class="shop-now">SHOP NOW</a>
     </div>
-    <div class="header-icons">
-      <button class="cart-btn" id="cartBtn">
-        <i class="fas fa-shopping-bag"></i>
-        <span class="cart-count" id="cartCount">0</span>
-      </button>
-    </div>
-  </div>
-</header>
 
-<!-- PAGE HERO SECTION -->
-<section class="page-hero">
-  <div class="hero-content">
-    <h1>Luxury Collection</h1>
-    <p>Discover Premium Fashion & Accessories</p>
-    <div class="breadcrumbs">
-      <a href="index.html">Home</a>
-      <span>/</span>
-      <span>Shop</span>
+    <div class="utility-links">
+      <a href="#">ORDER TRACKING</a>
+      <span class="divider">|</span>
+      <a href="#">HELP CENTER</a>
+      <span class="divider">|</span>
+      <div class="dropdown">
+        ENGLISH
+      </div>
+      <span class="divider">|</span>
+      <div class="dropdown">
+        $ USD
+      </div>
     </div>
   </div>
-  <div class="hero-overlay"></div>
-</section>
+  <!-- ================= HEADER ================= -->
+  <header>
 
-<!-- CART NOTIFICATION -->
-<div class="cart-notification" id="cartNotification">
-  <i class="fas fa-check-circle"></i>
-  <span id="notificationText">Item added to cart</span>
+    <nav class="navbar">
+
+      <div class="logo"><img src="./src/logo.webp" alt="compppany logo"></div>
+
+
+
+
+      <!--  search bar  -->
+
+      <div class="right-nav">
+
+        <ul class="nav-links" id="navLinks">
+
+          <li><a href="#">HOME</a></li>
+
+          <li><a href="#">SHOP<span class="badge hot">HOT</span></a></li>
+
+          <li><a href="#">CATEGORIES<span class="badge">SALE</span></a></li>
+          <li><a href="#">ABOUT US</a></li>
+          <li><a href="#">CONTACT</a></li>
+
+
+
+        </ul>
+
+        <div class="container2">
+          <!-- <div class="search-box">
+          <input type="text" placeholder="Search product here..." />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div> -->
+
+          <div class="icons">
+
+            <div class="wishlist">
+              <div>
+                <i class="fa-regular fa-heart"></i>
+                <span class="count">0</span>
+              </div>
+              <h3>Whishlist</h3>
+            </div>
+
+            <div class="card">
+              <div>
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="count">0</span>
+              </div>
+              <h3>Add to Card</h3>
+            </div>
+
+
+            <div class="login-btn">
+              <i class="fa-regular fa-user"></i>
+              <h3>Login</h3>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="menu-btn" id="menuBtn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <div class="close-btn" id="closeBtn">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+
+
+
+
+      </div>
+
+      <div class="menu-btn2" id="menuBtn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+      <div class="close-btn2" id="closeBtn">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+
+
+
+    </nav>
+
+  </header>
+
+    <!-- ================= Product list ================= -->
+  <div class="products-container">
+    <div class="premium-filter-section">
+  <div class="filter-header">
+    <span class="filter-title-text">Refine Collection</span>
+    <button class="filter-reset-btn" type="button">Reset</button>
+  </div>
+  
+  <div class="filter-controls-grid">
+    <div class="premium-filter-group">
+      <select id="filter-category" aria-label="Category">
+        <option value="all">All Categories</option>
+        <option value="clothing">Clothing</option>
+        <option value="watches">Watches</option>
+        <option value="accessories">Accessories</option>
+      </select>
+    </div>
+
+    <div class="premium-filter-group">
+      <select id="filter-price" aria-label="Sort By Price">
+        <option value="default">Sort: Featured</option>
+        <option value="low-high">Price: Low to High</option>
+        <option value="high-low">Price: High to Low</option>
+      </select>
+    </div>
+
+    <div class="premium-filter-group full-width-mobile">
+      <select id="filter-status" aria-label="Availability">
+        <option value="all">Availability: All</option>
+        <option value="new">New Arrivals</option>
+        <option value="trending">Trending</option>
+        <option value="sale">Special Offers</option>
+      </select>
+    </div>
+  </div>
 </div>
 
-<!-- OVERLAY FOR MOBILE SIDEBAR -->
-<div class="overlay" id="overlay"></div>
+    <div class="products-grid">
 
-<!-- MAIN CONTENT -->
-<main id="shop-now" class="shop-main">
-  <!-- SIDEBAR WITH FILTERS -->
-  <aside class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-      <h2>Filters</h2>
-      <button class="close-sidebar" id="closeSidebar">
-        <i class="fas fa-times"></i>
-      </button>
-    </div>
 
-    <!-- FILTER: CATEGORY -->
-    <div class="filter-section">
-      <h3 class="filter-title">Category</h3>
-      <div class="filter-options">
-        <label class="filter-checkbox">
-          <input type="checkbox" name="category" value="Dress" data-filter="category">
-          <span>Dresses</span>
-        </label>
-        <label class="filter-checkbox">
-          <input type="checkbox" name="category" value="Top" data-filter="category">
-          <span>Tops</span>
-        </label>
-        <label class="filter-checkbox">
-          <input type="checkbox" name="category" value="Jacket" data-filter="category">
-          <span>Jackets</span>
-        </label>
-        <label class="filter-checkbox">
-          <input type="checkbox" name="category" value="Shoe" data-filter="category">
-          <span>Shoes</span>
-        </label>
-        <label class="filter-checkbox">
-          <input type="checkbox" name="category" value="Accessory" data-filter="category">
-          <span>Accessories</span>
-        </label>
+      <div class="product-card">
+
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600" alt="Product">
+
+          <div class="product-labels">
+            <span class="product-label">New</span>
+            <span class="product-badge">Hot</span>
+          </div>
+
+          <div class="product-actions">
+            <button class="ac tion-btn like-btn">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <button class="action-btn">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+
+            <button class="action-btn">
+              <i class="fa-solid fa-share"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="product-info">
+
+          <h3 class="product-name">
+            Premium Oversized T-Shirt
+          </h3>
+
+          <div class="product-rating">
+
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+
+            <span class="rating-count">(120 Reviews)</span>
+
+          </div>
+
+          <div class="product-price">
+            $49
+            <span class="price-original">$79</span>
+          </div>
+
+          <span class="discount-badge">38% OFF</span>
+
+          <p class="product-desc">
+            Stylish premium cotton oversized t-shirt with modern fit and soft fabric.
+          </p>
+
+          <button class="add-to-cart-btn">
+            Add To Cart
+          </button>
+
+        </div>
+
       </div>
-    </div>
+      <div class="product-card">
 
-    <!-- FILTER: PRICE RANGE -->
-    <div class="filter-section">
-      <h3 class="filter-title">Price Range</h3>
-      <div class="price-inputs">
-        <input type="number" id="minPrice" placeholder="Min" value="0">
-        <span>-</span>
-        <input type="number" id="maxPrice" placeholder="Max" value="500">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600" alt="Watch">
+
+          <div class="product-labels">
+            <span class="product-label">Trending</span>
+          </div>
+
+          <div class="product-actions">
+            <button class="action-btn like-btn">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <button class="action-btn">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+
+            <button class="action-btn">
+              <i class="fa-solid fa-share"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="product-info">
+
+          <h3 class="product-name">
+            Luxury Smart Watch
+          </h3>
+
+          <div class="product-rating">
+
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+
+            <span class="rating-count">(89 Reviews)</span>
+
+          </div>
+
+          <div class="product-price">
+            $199
+            <span class="price-original">$250</span>
+          </div>
+
+          <span class="discount-badge">20% OFF</span>
+
+          <p class="product-desc">
+            Premium smartwatch with fitness tracking and elegant design.
+          </p>
+
+          <button class="add-to-cart-btn">
+            Add To Cart
+          </button>
+
+        </div>
+
       </div>
-      <button class="apply-price-btn" id="applyPrice">Apply</button>
-    </div>
+      <div class="product-card">
 
-    <!-- FILTER: SIZE -->
-    <div class="filter-section">
-      <h3 class="filter-title">Size</h3>
-      <div class="filter-options">
-        <label class="filter-checkbox">
-          <input type="checkbox" name="size" value="XS" data-filter="size">
-          <span>XS</span>
-        </label>
-        <label class="filter-checkbox">
-          <input type="checkbox" name="size" value="S" data-filter="size">
-          <span>S</span>
-        </label>
-        <label class="filter-checkbox">
-          <input type="checkbox" name="size" value="M" data-filter="size">
-          <span>M</span>
-        </label>
-        <label class="filter-checkbox">
-          <input type="checkbox" name="size" value="L" data-filter="size">
-          <span>L</span>
-        </label>
-        <label class="filter-checkbox">
-          <input type="checkbox" name="size" value="XL" data-filter="size">
-          <span>XL</span>
-        </label>
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600" alt="Watch">
+
+          <div class="product-labels">
+            <span class="product-label">Trending</span>
+          </div>
+
+          <div class="product-actions">
+            <button class="action-btn like-btn">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <button class="action-btn">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+
+            <button class="action-btn">
+              <i class="fa-solid fa-share"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="product-info">
+
+          <h3 class="product-name">
+            Luxury Smart Watch
+          </h3>
+
+          <div class="product-rating">
+
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+
+            <span class="rating-count">(89 Reviews)</span>
+
+          </div>
+
+          <div class="product-price">
+            $199
+            <span class="price-original">$250</span>
+          </div>
+
+          <span class="discount-badge">20% OFF</span>
+
+          <p class="product-desc">
+            Premium smartwatch with fitness tracking and elegant design.
+          </p>
+
+          <button class="add-to-cart-btn">
+            Add To Cart
+          </button>
+
+        </div>
+
       </div>
-    </div>
+      <div class="product-card">
 
-    <!-- FILTER: COLOR -->
-    <div class="filter-section">
-      <h3 class="filter-title">Color</h3>
-      <div class="filter-options">
-        <label class="filter-checkbox">
-          <input type="checkbox" name="color" value="Black" data-filter="color">
-          <span>Black</span>
-        </label>
-        <label class="filter-checkbox">
-          <input type="checkbox" name="color" value="White" data-filter="color">
-          <span>White</span>
-        </label>
-        <label class="filter-checkbox">
-          <input type="checkbox" name="color" value="Navy" data-filter="color">
-          <span>Navy</span>
-        </label>
-        <label class="filter-checkbox">
-          <input type="checkbox" name="color" value="Beige" data-filter="color">
-          <span>Beige</span>
-        </label>
-        <label class="filter-checkbox">
-          <input type="checkbox" name="color" value="Red" data-filter="color">
-          <span>Red</span>
-        </label>
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600" alt="Watch">
+
+          <div class="product-labels">
+            <span class="product-label">Trending</span>
+          </div>
+
+          <div class="product-actions">
+            <button class="action-btn like-btn">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <button class="action-btn">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+
+            <button class="action-btn">
+              <i class="fa-solid fa-share"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="product-info">
+
+          <h3 class="product-name">
+            Luxury Smart Watch
+          </h3>
+
+          <div class="product-rating">
+
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+
+            <span class="rating-count">(89 Reviews)</span>
+
+          </div>
+
+          <div class="product-price">
+            $199
+            <span class="price-original">$250</span>
+          </div>
+
+          <span class="discount-badge">20% OFF</span>
+
+          <p class="product-desc">
+            Premium smartwatch with fitness tracking and elegant design.
+          </p>
+
+          <button class="add-to-cart-btn">
+            Add To Cart
+          </button>
+
+        </div>
+
       </div>
+
     </div>
 
-    <!-- FILTER: RATING -->
-    <div class="filter-section">
-      <h3 class="filter-title">Rating</h3>
-      <div class="filter-options">
-        <label class="filter-checkbox">
-          <input type="checkbox" name="rating" value="5" data-filter="rating">
-          <span>★★★★★ (5 Star)</span>
-        </label>
-        <label class="filter-checkbox">
-          <input type="checkbox" name="rating" value="4" data-filter="rating">
-          <span>★★★★ (4 Star)</span>
-        </label>
-        <label class="filter-checkbox">
-          <input type="checkbox" name="rating" value="3" data-filter="rating">
-          <span>★★★ (3 Star)</span>
-        </label>
-      </div>
+  </div>
+
+
+
+
+  <section class="newsletter">
+    <h2 class="newsletter-title">Subscribe To Our Newsletter</h2>
+    <p class="newsletter-desc">Subscribe to our latest newsletter to get news about special discounts.</p>
+
+    <div class="newsletter-form">
+      <input type="email" placeholder="Your email address" aria-label="Your email address" />
+      <button type="button">Subscribe</button>
     </div>
 
-    <button class="reset-filters" id="resetFilters">Reset All Filters</button>
-  </aside>
-  <!-- MAIN CONTENT AREA -->
-  <section class="content-area">
-    <!-- TOOLBAR -->
-    <div class="toolbar">
-      <div class="results-info">
-        <p id="resultsText">Showing 12 premium items</p>
-      </div>
-      <div class="toolbar-controls">
-        <button class="filter-toggle" id="filterToggle">
-          <i class="fas fa-filter"></i>
-          <span>Filters</span>
-        </button>
-        <select id="sortBy" class="sort-select">
-          <option value="featured">Featured</option>
-          <option value="price-low">Price: Low to High</option>
-          <option value="price-high">Price: High to Low</option>
-          <option value="newest">Newest First</option>
-          <option value="rating">Best Rating</option>
-        </select>
-      </div>
+    <div class="newsletter-checkbox">
+      <input type="checkbox" id="agree" />
+      <label for="agree">
+        I agree to the <a href="#">terms and conditions</a> and the <a href="#">privacy policy</a>
+      </label>
     </div>
-
-    <!-- PRODUCTS GRID -->
-    <div class="products-container">
-      <div class="products-grid" id="productsGrid"></div>
-    </div>
-
-    <!-- LOADING SPINNER -->
-    <div class="loading" id="loadingSpinner">
-      <div class="spinner"></div>
-      <p>Loading products...</p>
-    </div>
-
-    <!-- NO RESULTS MESSAGE -->
-    <div class="no-results" id="noResults" style="display:none;">
-      <i class="fas fa-search"></i>
-      <h2>No products found</h2>
-      <p>Try adjusting your filters</p>
-      <button onclick="document.getElementById('resetFilters').click()" class="reset-btn">
-        Clear Filters
-      </button>
-    </div>
-
-    <!-- NEWSLETTER SECTION -->
-    <section class="newsletter">
-      <div class="newsletter-content">
-        <h2>Join Our Luxury Club</h2>
-        <p>Get exclusive access to new collections, special discounts, and VIP events</p>
-      </div>
-      <form class="newsletter-form">
-        <input type="email" placeholder="Enter your email" required>
-        <button type="submit">Subscribe</button>
-      </form>
-    </section>
   </section>
-</main>
-<script src="shop.js"></script>
-</body>
-</html>
+  <!-- ================= FOOTER SECTION ================= -->
 
-        
+  <footer>
+
+    <div class="footer-container">
+
+      <!-- COLUMN 1 -->
+
+      <div class="footer-col">
+
+        <h3>FASHIUP</h3>
+
+        <p>
+          Welcome to our store, where we pride ourselves on
+          providing exceptional products and unparalleled customer service.
+          Our store is a haven for those who appreciate quality,
+          style, and innovation.
+        </p>
+
+        <div class="app-buttons">
+
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg">
+
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg">
+
+        </div>
+
+      </div>
+
+      <!-- COLUMN 2 -->
+
+      <div class="footer-col">
+
+        <h2>Our Company</h2>
+
+        <div class="footer-links">
+          <a href="#">Delivery</a>
+          <a href="#">Legal Notice</a>
+          <a href="#">Terms and Conditions</a>
+          <a href="#">Secure Payment</a>
+          <a href="#">Contact Us</a>
+          <a href="#">About Us</a>
+        </div>
+
+      </div>
+
+      <!-- COLUMN 3 -->
+
+      <div class="footer-col">
+
+        <h2>Products</h2>
+
+        <div class="footer-links">
+          <a href="#">Prices Drop</a>
+          <a href="#">New Products</a>
+          <a href="#">Best Sellers</a>
+          <a href="#">Sitemap</a>
+          <a href="#">Stores</a>
+          <a href="#">Accessories</a>
+        </div>
+
+      </div>
+
+      <!-- COLUMN 4 -->
+
+      <div class="footer-col">
+
+        <h2>Store Information</h2>
+
+        <p>
+          Fashiup - Fashion Store <br>
+          99 New Theme St. XY, USA 12345, <br>
+          Beside the Sun point land. <br>
+          United States
+        </p>
+
+        <p>Call us: +00 123-456-789</p>
+
+        <p>Email us: admin@example.com</p>
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+    <!-- ================= FOOTER BOTTOM ================= -->
+
+    <div class="footer-bottom">
+
+      <!-- SOCIAL -->
+
+      <div class="social-icons">
+
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+
+        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+
+        <a href="#"><i class="fa-brands fa-google"></i></a>
+
+      </div>
+
+      <!-- COPYRIGHT -->
+
+      <div class="copyright">
+        Copyright © Fashiup. All Rights Reserved
+      </div>
+
+      <!-- PAYMENT -->
+
+      <div class="payment">
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg">
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg">
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png">
+
+      </div>
+
+      <!-- TOP BUTTON -->
+
+      <div class="top-btn" id="topBtn">
+        <i class="fa-solid fa-angle-up"></i>
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
