@@ -124,457 +124,780 @@
 
   </header>
 
-    <!-- ================= Product list ================= -->
-  <div class="products-container">
-    <div class="premium-filter-section">
-  <div class="filter-header">
-    <span class="filter-title-text">Refine Collection</span>
-    <button class="filter-reset-btn" type="button">Reset</button>
+  <!-- ================= Product list ================= -->
+  <div class="shop-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="filter-sidebar" id="filterSidebar">
+
+      <div class="sidebar-header">
+        <h2>Filters</h2>
+
+        <button class="close-filter" id="closeFilter">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- CATEGORY -->
+
+      <div class="filter-box">
+
+        <h3>Category</h3>
+
+        <label>
+          <input type="checkbox" class="category-filter" value="fashion">
+          Fashion
+        </label>
+
+        <label>
+          <input type="checkbox" class="category-filter" value="shoes">
+          Shoes
+        </label>
+
+        <label>
+          <input type="checkbox" class="category-filter" value="watch">
+          Watches
+        </label>
+
+      </div>
+
+      <!-- PRICE -->
+
+      <div class="filter-box">
+
+        <h3>Price</h3>
+
+        <input type="range" id="priceRange" min="0" max="300" value="300">
+
+        <p>Max Price: $<span id="priceValue">300</span></p>
+
+      </div>
+
+      <!-- BRAND -->
+
+      <div class="filter-box">
+
+        <h3>Brands</h3>
+
+        <label>
+          <input type="checkbox" class="brand-filter" value="nike">
+          Nike
+        </label>
+
+        <label>
+          <input type="checkbox" class="brand-filter" value="zara">
+          Zara
+        </label>
+
+        <label>
+          <input type="checkbox" class="brand-filter" value="apple">
+          Apple
+        </label>
+
+      </div>
+
+      <!-- RATING -->
+
+      <div class="filter-box">
+
+        <h3>Rating</h3>
+
+        <label>
+          <input type="radio" name="rating" class="rating-filter" value="4">
+          4★ & above
+        </label>
+
+        <label>
+          <input type="radio" name="rating" class="rating-filter" value="3">
+          3★ & above
+        </label>
+
+      </div>
+
+    </aside>
+
+    <!-- ================= PRODUCTS AREA ================= -->
+
+    <div class="products-area">
+
+      <!-- MOBILE FILTER BUTTON -->
+
+      <button class="mobile-filter-btn" id="mobileFilterBtn">
+        <i class="fa-solid fa-sliders"></i>
+        Filters
+      </button>
+
+      <div class="products-container">
+
+        <div class="products-grid">
+
+          <!-- Product Card 1 -->
+          <div class="product-card">
+
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600" alt="Product">
+
+              <div class="product-labels">
+                <span class="product-label">New</span>
+                <span class="product-badge">Hot</span>
+              </div>
+
+              <div class="product-actions">
+                <button class="action-btn like-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+
+                <button class="action-btn">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+
+                <button class="action-btn">
+                  <i class="fa-solid fa-share"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product-info">
+
+              <h3 class="product-name">
+                Premium Oversized T-Shirt
+              </h3>
+
+              <div class="product-rating">
+
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+
+                <span class="rating-count">(120 Reviews)</span>
+
+              </div>
+
+              <div class="product-price">
+                $49
+                <span class="price-original">$79</span>
+              </div>
+
+              <span class="discount-badge">38% OFF</span>
+
+              <p class="product-desc">
+                Stylish premium cotton oversized t-shirt with modern fit and soft fabric.
+              </p>
+
+              <button class="add-to-cart-btn">
+                Add To Cart
+              </button>
+
+            </div>
+
+          </div>
+
+          <!-- Product Card 2 -->
+          <div class="product-card">
+
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600" alt="Shoes">
+
+              <div class="product-labels">
+                <span class="product-label">Sale</span>
+              </div>
+
+              <div class="product-actions">
+                <button class="action-btn like-btn liked">
+                  <i class="fa-solid fa-heart"></i>
+                </button>
+
+                <button class="action-btn">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+
+                <button class="action-btn">
+                  <i class="fa-solid fa-share"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product-info">
+
+              <h3 class="product-name">
+                Running Sports Sneakers
+              </h3>
+
+              <div class="product-rating">
+
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+
+                <span class="rating-count">(340 Reviews)</span>
+
+              </div>
+
+              <div class="product-price">
+                $99
+                <span class="price-original">$140</span>
+              </div>
+
+              <span class="discount-badge">29% OFF</span>
+
+              <p class="product-desc">
+                Lightweight running shoes designed for comfort and performance.
+              </p>
+
+              <button class="add-to-cart-btn">
+                Add To Cart
+              </button>
+
+            </div>
+
+          </div>
+
+          <!-- Product Card 3 -->
+          <div class="product-card">
+
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600" alt="Watch">
+
+              <div class="product-labels">
+                <span class="product-label">Trending</span>
+              </div>
+
+              <div class="product-actions">
+                <button class="action-btn like-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+
+                <button class="action-btn">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+
+                <button class="action-btn">
+                  <i class="fa-solid fa-share"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product-info">
+
+              <h3 class="product-name">
+                Luxury Smart Watch
+              </h3>
+
+              <div class="product-rating">
+
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+
+                <span class="rating-count">(89 Reviews)</span>
+
+              </div>
+
+              <div class="product-price">
+                $199
+                <span class="price-original">$250</span>
+              </div>
+
+              <span class="discount-badge">20% OFF</span>
+
+              <p class="product-desc">
+                Premium smartwatch with fitness tracking and elegant design.
+              </p>
+
+              <button class="add-to-cart-btn">
+                Add To Cart
+              </button>
+
+            </div>
+
+          </div>
+          <div class="product-card">
+
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600" alt="Watch">
+
+              <div class="product-labels">
+                <span class="product-label">Trending</span>
+              </div>
+
+              <div class="product-actions">
+                <button class="action-btn like-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+
+                <button class="action-btn">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+
+                <button class="action-btn">
+                  <i class="fa-solid fa-share"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product-info">
+
+              <h3 class="product-name">
+                Luxury Smart Watch
+              </h3>
+
+              <div class="product-rating">
+
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+
+                <span class="rating-count">(89 Reviews)</span>
+
+              </div>
+
+              <div class="product-price">
+                $199
+                <span class="price-original">$250</span>
+              </div>
+
+              <span class="discount-badge">20% OFF</span>
+
+              <p class="product-desc">
+                Premium smartwatch with fitness tracking and elegant design.
+              </p>
+
+              <button class="add-to-cart-btn">
+                Add To Cart
+              </button>
+
+            </div>
+
+          </div>
+          <div class="product-card">
+
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600" alt="Product">
+
+              <div class="product-labels">
+                <span class="product-label">New</span>
+                <span class="product-badge">Hot</span>
+              </div>
+
+              <div class="product-actions">
+                <button class="action-btn like-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+
+                <button class="action-btn">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+
+                <button class="action-btn">
+                  <i class="fa-solid fa-share"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product-info">
+
+              <h3 class="product-name">
+                Premium Oversized T-Shirt
+              </h3>
+
+              <div class="product-rating">
+
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+
+                <span class="rating-count">(120 Reviews)</span>
+
+              </div>
+
+              <div class="product-price">
+                $49
+                <span class="price-original">$79</span>
+              </div>
+
+              <span class="discount-badge">38% OFF</span>
+
+              <p class="product-desc">
+                Stylish premium cotton oversized t-shirt with modern fit and soft fabric.
+              </p>
+
+              <button class="add-to-cart-btn">
+                Add To Cart
+              </button>
+
+            </div>
+
+          </div>
+          <div class="product-card">
+
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600" alt="Watch">
+
+              <div class="product-labels">
+                <span class="product-label">Trending</span>
+              </div>
+
+              <div class="product-actions">
+                <button class="action-btn like-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+
+                <button class="action-btn">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+
+                <button class="action-btn">
+                  <i class="fa-solid fa-share"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product-info">
+
+              <h3 class="product-name">
+                Luxury Smart Watch
+              </h3>
+
+              <div class="product-rating">
+
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+
+                <span class="rating-count">(89 Reviews)</span>
+
+              </div>
+
+              <div class="product-price">
+                $199
+                <span class="price-original">$250</span>
+              </div>
+
+              <span class="discount-badge">20% OFF</span>
+
+              <p class="product-desc">
+                Premium smartwatch with fitness tracking and elegant design.
+              </p>
+
+              <button class="add-to-cart-btn">
+                Add To Cart
+              </button>
+
+            </div>
+
+          </div>
+          <div class="product-card">
+
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600" alt="Watch">
+
+              <div class="product-labels">
+                <span class="product-label">Trending</span>
+              </div>
+
+              <div class="product-actions">
+                <button class="action-btn like-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+
+                <button class="action-btn">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+
+                <button class="action-btn">
+                  <i class="fa-solid fa-share"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product-info">
+
+              <h3 class="product-name">
+                Luxury Smart Watch
+              </h3>
+
+              <div class="product-rating">
+
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+
+                <span class="rating-count">(89 Reviews)</span>
+
+              </div>
+
+              <div class="product-price">
+                $199
+                <span class="price-original">$250</span>
+              </div>
+
+              <span class="discount-badge">20% OFF</span>
+
+              <p class="product-desc">
+                Premium smartwatch with fitness tracking and elegant design.
+              </p>
+
+              <button class="add-to-cart-btn">
+                Add To Cart
+              </button>
+
+            </div>
+
+          </div>
+          <div class="product-card">
+
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600" alt="Watch">
+
+              <div class="product-labels">
+                <span class="product-label">Trending</span>
+              </div>
+
+              <div class="product-actions">
+                <button class="action-btn like-btn">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+
+                <button class="action-btn">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+
+                <button class="action-btn">
+                  <i class="fa-solid fa-share"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product-info">
+
+              <h3 class="product-name">
+                Luxury Smart Watch
+              </h3>
+
+              <div class="product-rating">
+
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+
+                <span class="rating-count">(89 Reviews)</span>
+
+              </div>
+
+              <div class="product-price">
+                $199
+                <span class="price-original">$250</span>
+              </div>
+
+              <span class="discount-badge">20% OFF</span>
+
+              <p class="product-desc">
+                Premium smartwatch with fitness tracking and elegant design.
+              </p>
+
+              <button class="add-to-cart-btn">
+                Add To Cart
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+      </div>
+    </div>
   </div>
-  
-  <div class="filter-controls-grid">
-    <div class="premium-filter-group">
-      <select id="filter-category" aria-label="Category">
-        <option value="all">All Categories</option>
-        <option value="clothing">Clothing</option>
-        <option value="watches">Watches</option>
-        <option value="accessories">Accessories</option>
-      </select>
-    </div>
-
-    <div class="premium-filter-group">
-      <select id="filter-price" aria-label="Sort By Price">
-        <option value="default">Sort: Featured</option>
-        <option value="low-high">Price: Low to High</option>
-        <option value="high-low">Price: High to Low</option>
-      </select>
-    </div>
-
-    <div class="premium-filter-group full-width-mobile">
-      <select id="filter-status" aria-label="Availability">
-        <option value="all">Availability: All</option>
-        <option value="new">New Arrivals</option>
-        <option value="trending">Trending</option>
-        <option value="sale">Special Offers</option>
-      </select>
-    </div>
-  </div>
-</div>
-
-    <div class="products-grid">
 
 
-      <div class="product-card">
+      <section class="newsletter">
+        <h2 class="newsletter-title">Subscribe To Our Newsletter</h2>
+        <p class="newsletter-desc">Subscribe to our latest newsletter to get news about special discounts.</p>
 
-        <div class="product-image">
-          <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600" alt="Product">
-
-          <div class="product-labels">
-            <span class="product-label">New</span>
-            <span class="product-badge">Hot</span>
-          </div>
-
-          <div class="product-actions">
-            <button class="ac tion-btn like-btn">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-
-            <button class="action-btn">
-              <i class="fa-solid fa-eye"></i>
-            </button>
-
-            <button class="action-btn">
-              <i class="fa-solid fa-share"></i>
-            </button>
-          </div>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Your email address" aria-label="Your email address" />
+          <button type="button">Subscribe</button>
         </div>
 
-        <div class="product-info">
+        <div class="newsletter-checkbox">
+          <input type="checkbox" id="agree" />
+          <label for="agree">
+            I agree to the <a href="#">terms and conditions</a> and the <a href="#">privacy policy</a>
+          </label>
+        </div>
+      </section>
+      <!-- ================= FOOTER SECTION ================= -->
 
-          <h3 class="product-name">
-            Premium Oversized T-Shirt
-          </h3>
+      <footer>
 
-          <div class="product-rating">
+        <div class="footer-container">
 
-            <div class="stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-regular fa-star"></i>
+          <!-- COLUMN 1 -->
+
+          <div class="footer-col">
+
+            <h3>FASHIUP</h3>
+
+            <p>
+              Welcome to our store, where we pride ourselves on
+              providing exceptional products and unparalleled customer service.
+              Our store is a haven for those who appreciate quality,
+              style, and innovation.
+            </p>
+
+            <div class="app-buttons">
+
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg">
+
+              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg">
+
             </div>
 
-            <span class="rating-count">(120 Reviews)</span>
-
           </div>
 
-          <div class="product-price">
-            $49
-            <span class="price-original">$79</span>
-          </div>
+          <!-- COLUMN 2 -->
 
-          <span class="discount-badge">38% OFF</span>
+          <div class="footer-col">
 
-          <p class="product-desc">
-            Stylish premium cotton oversized t-shirt with modern fit and soft fabric.
-          </p>
+            <h2>Our Company</h2>
 
-          <button class="add-to-cart-btn">
-            Add To Cart
-          </button>
-
-        </div>
-
-      </div>
-      <div class="product-card">
-
-        <div class="product-image">
-          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600" alt="Watch">
-
-          <div class="product-labels">
-            <span class="product-label">Trending</span>
-          </div>
-
-          <div class="product-actions">
-            <button class="action-btn like-btn">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-
-            <button class="action-btn">
-              <i class="fa-solid fa-eye"></i>
-            </button>
-
-            <button class="action-btn">
-              <i class="fa-solid fa-share"></i>
-            </button>
-          </div>
-        </div>
-
-        <div class="product-info">
-
-          <h3 class="product-name">
-            Luxury Smart Watch
-          </h3>
-
-          <div class="product-rating">
-
-            <div class="stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-regular fa-star"></i>
+            <div class="footer-links">
+              <a href="#">Delivery</a>
+              <a href="#">Legal Notice</a>
+              <a href="#">Terms and Conditions</a>
+              <a href="#">Secure Payment</a>
+              <a href="#">Contact Us</a>
+              <a href="#">About Us</a>
             </div>
 
-            <span class="rating-count">(89 Reviews)</span>
-
           </div>
 
-          <div class="product-price">
-            $199
-            <span class="price-original">$250</span>
-          </div>
+          <!-- COLUMN 3 -->
 
-          <span class="discount-badge">20% OFF</span>
+          <div class="footer-col">
 
-          <p class="product-desc">
-            Premium smartwatch with fitness tracking and elegant design.
-          </p>
+            <h2>Products</h2>
 
-          <button class="add-to-cart-btn">
-            Add To Cart
-          </button>
-
-        </div>
-
-      </div>
-      <div class="product-card">
-
-        <div class="product-image">
-          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600" alt="Watch">
-
-          <div class="product-labels">
-            <span class="product-label">Trending</span>
-          </div>
-
-          <div class="product-actions">
-            <button class="action-btn like-btn">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-
-            <button class="action-btn">
-              <i class="fa-solid fa-eye"></i>
-            </button>
-
-            <button class="action-btn">
-              <i class="fa-solid fa-share"></i>
-            </button>
-          </div>
-        </div>
-
-        <div class="product-info">
-
-          <h3 class="product-name">
-            Luxury Smart Watch
-          </h3>
-
-          <div class="product-rating">
-
-            <div class="stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-regular fa-star"></i>
+            <div class="footer-links">
+              <a href="#">Prices Drop</a>
+              <a href="#">New Products</a>
+              <a href="#">Best Sellers</a>
+              <a href="#">Sitemap</a>
+              <a href="#">Stores</a>
+              <a href="#">Accessories</a>
             </div>
 
-            <span class="rating-count">(89 Reviews)</span>
+          </div>
+
+          <!-- COLUMN 4 -->
+
+          <div class="footer-col">
+
+            <h2>Store Information</h2>
+
+            <p>
+              Fashiup - Fashion Store <br>
+              99 New Theme St. XY, USA 12345, <br>
+              Beside the Sun point land. <br>
+              United States
+            </p>
+
+            <p>Call us: +00 123-456-789</p>
+
+            <p>Email us: admin@example.com</p>
 
           </div>
 
-          <div class="product-price">
-            $199
-            <span class="price-original">$250</span>
-          </div>
-
-          <span class="discount-badge">20% OFF</span>
-
-          <p class="product-desc">
-            Premium smartwatch with fitness tracking and elegant design.
-          </p>
-
-          <button class="add-to-cart-btn">
-            Add To Cart
-          </button>
-
         </div>
 
-      </div>
-      <div class="product-card">
 
-        <div class="product-image">
-          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600" alt="Watch">
 
-          <div class="product-labels">
-            <span class="product-label">Trending</span>
-          </div>
 
-          <div class="product-actions">
-            <button class="action-btn like-btn">
-              <i class="fa-regular fa-heart"></i>
-            </button>
 
-            <button class="action-btn">
-              <i class="fa-solid fa-eye"></i>
-            </button>
 
-            <button class="action-btn">
-              <i class="fa-solid fa-share"></i>
-            </button>
-          </div>
-        </div>
+        <!-- ================= FOOTER BOTTOM ================= -->
 
-        <div class="product-info">
+        <div class="footer-bottom">
 
-          <h3 class="product-name">
-            Luxury Smart Watch
-          </h3>
+          <!-- SOCIAL -->
 
-          <div class="product-rating">
+          <div class="social-icons">
 
-            <div class="stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-regular fa-star"></i>
-            </div>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
 
-            <span class="rating-count">(89 Reviews)</span>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+
+            <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+
+            <a href="#"><i class="fa-brands fa-google"></i></a>
 
           </div>
 
-          <div class="product-price">
-            $199
-            <span class="price-original">$250</span>
+          <!-- COPYRIGHT -->
+
+          <div class="copyright">
+            Copyright © Fashiup. All Rights Reserved
           </div>
 
-          <span class="discount-badge">20% OFF</span>
+          <!-- PAYMENT -->
 
-          <p class="product-desc">
-            Premium smartwatch with fitness tracking and elegant design.
-          </p>
+          <div class="payment">
 
-          <button class="add-to-cart-btn">
-            Add To Cart
-          </button>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg">
 
-        </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg">
 
-      </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png">
 
-    </div>
+          </div>
 
-  </div>
+          <!-- TOP BUTTON -->
 
-
-
-
-  <section class="newsletter">
-    <h2 class="newsletter-title">Subscribe To Our Newsletter</h2>
-    <p class="newsletter-desc">Subscribe to our latest newsletter to get news about special discounts.</p>
-
-    <div class="newsletter-form">
-      <input type="email" placeholder="Your email address" aria-label="Your email address" />
-      <button type="button">Subscribe</button>
-    </div>
-
-    <div class="newsletter-checkbox">
-      <input type="checkbox" id="agree" />
-      <label for="agree">
-        I agree to the <a href="#">terms and conditions</a> and the <a href="#">privacy policy</a>
-      </label>
-    </div>
-  </section>
-  <!-- ================= FOOTER SECTION ================= -->
-
-  <footer>
-
-    <div class="footer-container">
-
-      <!-- COLUMN 1 -->
-
-      <div class="footer-col">
-
-        <h3>FASHIUP</h3>
-
-        <p>
-          Welcome to our store, where we pride ourselves on
-          providing exceptional products and unparalleled customer service.
-          Our store is a haven for those who appreciate quality,
-          style, and innovation.
-        </p>
-
-        <div class="app-buttons">
-
-          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg">
-
-          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg">
+          <div class="top-btn" id="topBtn">
+            <i class="fa-solid fa-angle-up"></i>
+          </div>
 
         </div>
 
-      </div>
+      </footer>
 
-      <!-- COLUMN 2 -->
-
-      <div class="footer-col">
-
-        <h2>Our Company</h2>
-
-        <div class="footer-links">
-          <a href="#">Delivery</a>
-          <a href="#">Legal Notice</a>
-          <a href="#">Terms and Conditions</a>
-          <a href="#">Secure Payment</a>
-          <a href="#">Contact Us</a>
-          <a href="#">About Us</a>
-        </div>
-
-      </div>
-
-      <!-- COLUMN 3 -->
-
-      <div class="footer-col">
-
-        <h2>Products</h2>
-
-        <div class="footer-links">
-          <a href="#">Prices Drop</a>
-          <a href="#">New Products</a>
-          <a href="#">Best Sellers</a>
-          <a href="#">Sitemap</a>
-          <a href="#">Stores</a>
-          <a href="#">Accessories</a>
-        </div>
-
-      </div>
-
-      <!-- COLUMN 4 -->
-
-      <div class="footer-col">
-
-        <h2>Store Information</h2>
-
-        <p>
-          Fashiup - Fashion Store <br>
-          99 New Theme St. XY, USA 12345, <br>
-          Beside the Sun point land. <br>
-          United States
-        </p>
-
-        <p>Call us: +00 123-456-789</p>
-
-        <p>Email us: admin@example.com</p>
-
-      </div>
-
-    </div>
-
-
-
-
-
-
-    <!-- ================= FOOTER BOTTOM ================= -->
-
-    <div class="footer-bottom">
-
-      <!-- SOCIAL -->
-
-      <div class="social-icons">
-
-        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-
-        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-
-        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
-
-        <a href="#"><i class="fa-brands fa-google"></i></a>
-
-      </div>
-
-      <!-- COPYRIGHT -->
-
-      <div class="copyright">
-        Copyright © Fashiup. All Rights Reserved
-      </div>
-
-      <!-- PAYMENT -->
-
-      <div class="payment">
-
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg">
-
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg">
-
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png">
-
-      </div>
-
-      <!-- TOP BUTTON -->
-
-      <div class="top-btn" id="topBtn">
-        <i class="fa-solid fa-angle-up"></i>
-      </div>
-
-    </div>
-
-  </footer>
-
-  <script src="script.js"></script>
+      <script src="script.js"></script>
 
 </body>
 
