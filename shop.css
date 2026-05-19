@@ -94,11 +94,7 @@
 
 /* ================= PRODUCT GRID ================= */
 
-.products-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-}
+
 
 /* ================= MOBILE ================= */
 
@@ -137,10 +133,6 @@
 }
 
 @media(max-width:768px){
-
-    .products-grid{
-        grid-template-columns:1fr;
-    }
 
     .filter-sidebar{
         width:85%;
